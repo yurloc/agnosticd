@@ -1,5 +1,6 @@
 ---
 
+# yamllint disable rule:line-length
 # Purpose:
 #   This script queries OCP for builds that exist but are not yet ready.
 #   So long as there are unready builds, this script continues to loop
@@ -11,6 +12,8 @@
 #  Documentation pertaining to jq syntax:
 #    - http://jmespath.org/tutorial.html
 #    - https://stackoverflow.com/questions/41261680/ansible-json-query-path-to-select-item-by-content
+#
+# yamllint enable rule:line-length
 #
 - name: "Wait for following builds to become ready: {{build_to_wait}}"
   command: 'oc get build -o json -n "{{ ocp_project }}"'
